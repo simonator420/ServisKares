@@ -25,7 +25,7 @@
         .hero-text {
             text-align: left;
             padding-left: 5em;
-            padding-top: 10em;
+            padding-top: 13.5em;
             color: white;
             z-index: 10;
         }
@@ -51,7 +51,7 @@
             color: black;
             padding: 0.8em 2em;
             border: none;
-            border-radius: 5px;
+            border-radius: 0.3em;
             font-size: 1em;
             margin-top: 0.5em;
             cursor: pointer;
@@ -63,9 +63,7 @@
         }
 
         .navigation {
-            position: sticky;
-            top: 0;
-            left: 0;
+            position: fixed;
             width: 100%;
             padding: 1.3em;
             box-sizing: border-box;
@@ -78,22 +76,15 @@
 
         .logo {
             color: white;
-            font-size: 24px;
+            font-size: 1.55em;
             font-weight: bold;
-            margin-right: 20px;
+            margin-right: 1.25em;
         }
 
         .navigation-links {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 300px;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            flex-direction: column;
-            justify-content: center;
-            transition: left 0.3s ease-in-out;
-            z-index: 999;
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
         }
 
         .navigation-links.open {
@@ -103,10 +94,10 @@
         .navigation a {
             color: white;
             text-decoration: none;
-            display: block;
-            padding: 10px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.3s ease;
+            margin: 0 0.6em;
+            padding: 0.3em 0.6em;
+            border: 1px solid white;
+            border-radius: 0.3em;
         }
 
         .navigation a:hover {
@@ -120,11 +111,39 @@
 
         @media (max-width: 768px) {
             .hero-section {
-                padding-left: 20px;
+                padding-left: 1.25em;
+            }
+
+            .navigation-links {
+                position: fixed;
+                top: 4.4em;
+                left: -21em;
+                width: 21em;
+                height: calc(100vh - 60px);
+                background-color: rgba(0, 0, 0, 0.5);
+                flex-direction: column;
+                justify-content: flex-start;
+                transition: left 0.3s ease-in-out;
+                z-index: 999;
+            }
+            .navigation{
+                margin-left: -1.25em;
+                width: 100%;
+            }
+
+            .navigation a {
+                display: block;
+                margin: 0;
+                padding: 0.6em 1.25em;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             .hero-text {
                 max-width: 100%;
+                padding-left: 0;
+                padding-top: 25em;
+                font-size: 60%;
             }
 
             .hamburger-menu {
@@ -133,10 +152,23 @@
             }
 
             .bar {
-                width: 25px;
-                height: 3px;
+                width: 1.4em;
+                height: 0.2em;
                 background-color: white;
-                margin: 3px 0;
+                margin: 0.2em 0;
+                transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition effect */
+            }
+
+            .cross .bar:nth-child(1) {
+                transform: rotate(45deg) translateY(0.59em);
+            }
+
+            .cross .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .cross .bar:nth-child(3) {
+                transform: rotate(-45deg) translateY(-0.59em);
             }
         }
 
@@ -144,7 +176,9 @@
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.navigation-links');
+            const hamburger = document.querySelector('.hamburger-menu');
             navLinks.classList.toggle('open');
+            hamburger.classList.toggle('cross');
         }
     </script>
 </head>
@@ -153,11 +187,11 @@
     <div class="navigation">
         <div class="logo">LOGO</div>
         <div class="navigation-links">
-            <a href="#">Domů</a>
-            <a href="#">Nabízené služby</a>
-            <a href="#">O společnosti</a>
-            <a href="#">Reference</a>
-            <a href="#">Kontakt</a>
+            <a href="#" onclick="toggleMenu()">Domů</a>
+            <a href="#" onclick="toggleMenu()">Nabízené služby</a>
+            <a href="#" onclick="toggleMenu()">O společnosti</a>
+            <a href="#" onclick="toggleMenu()">Reference</a>
+            <a href="#" onclick="toggleMenu()">Kontakt</a>
         </div>
         <div class="hamburger-menu" onclick="toggleMenu()">
             <div class="bar"></div>
