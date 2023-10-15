@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Hero Section with Sidebar Hamburger Menu</title>
+    <title>Tomáš Kareš Servis s.r.o.</title>
     <style>
         body, html {
             margin: 0;
@@ -24,8 +24,8 @@
 
         .hero-text {
             text-align: left;
-            padding-left: 5em;
-            padding-top: 13.5em;
+            padding-left: 6em;
+            padding-top: 14.5em;
             color: white;
             z-index: 10;
         }
@@ -47,7 +47,7 @@
         }
 
         .hero-button {
-            background-color: white; /* Semi-transparent white */
+            background-color: white;
             color: black;
             padding: 0.8em 2em;
             border: none;
@@ -105,8 +105,65 @@
         }
 
         .content {
-            padding-right: 8em;
-            padding-left: 8em; /* Increased left and right padding */
+            padding-right: 6em;
+            padding-left: 6em;
+        }
+
+        .offer-columns {
+            display: flex;
+            justify-content: space-between;
+            padding: 2em 0;
+        }
+
+        .column-left {
+            flex: 1;
+            margin-right: 1em;
+        }
+
+        .column-right {
+            flex: 1;
+            margin-left: 1em;
+        }
+
+        .box {
+            display: flex;
+            padding: 1em;
+            margin-bottom: 1em;
+            position: relative;
+            background-color: #f6f6f6;
+        }
+
+        .box img {
+            flex: 0 0 25%;
+            max-width: 25%;
+            object-fit: cover;
+            margin: -1em 1em -1em -1em;
+        }
+
+        .box-content {
+            flex: 1;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .box p {
+            margin-bottom: 1em;
+        }
+
+        .box button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .box button:hover {
+            background-color: #555;
         }
 
         @media (max-width: 768px) {
@@ -142,8 +199,15 @@
             .hero-text {
                 max-width: 100%;
                 padding-left: 0;
-                padding-top: 25em;
-                font-size: 60%;
+                padding-top: 12em;
+            }
+
+            .hero-text h1{
+                font-size: 1.5em;
+            }
+
+            .hero-text h2{
+                font-size: 2.5em;
             }
 
             .hamburger-menu {
@@ -151,16 +215,21 @@
                 cursor: pointer;
             }
 
+            .content{
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
             .bar {
                 width: 1.4em;
                 height: 0.2em;
                 background-color: white;
                 margin: 0.2em 0;
-                transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition effect */
+                transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
             .cross .bar:nth-child(1) {
-                transform: rotate(45deg) translateY(0.59em);
+                transform: rotate(45deg) translateY(0.585em);
             }
 
             .cross .bar:nth-child(2) {
@@ -168,7 +237,7 @@
             }
 
             .cross .bar:nth-child(3) {
-                transform: rotate(-45deg) translateY(-0.59em);
+                transform: rotate(-45deg) translateY(-0.585em);
             }
         }
 
@@ -210,7 +279,112 @@
 <div class="content">
     <h1>Welcome to our website</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-    <!-- Add more content as needed -->
+
+    <div class="offer-columns">
+        <div class="column-left">
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Elektroinstalace</h3>
+                    <p>realizace a rekonstrukce elektroinstalace – silnoproud, slaboproud <br>
+                        elektromontáže v průmyslových objektech, opravy osvětlení reklam, parkovišť.<br>
+                        zajištění elektrorevize<br>
+                        servisní práce – opravy, výměny, montáže zářivek, svítidel, zásuvek, vypínačů, jističů, spínačů, rozvaděčů....</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Letní úklidy parkovišť a okolí</h3>
+                    <p>pravidelný úklid parkovišť včetně sečení přilehlých travnatých ploch, mulčování, pletí, postřiky, čištění žlabů kanalizace, čištění okapů vč. likvidace odpadu z prováděných činností, hloubkové čištění zámkové dlažbyv</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Ostraha</h3>
+                    <p>Fyzická ostraha objektu, majetku</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Topenářské práce</h3>
+                    <p>montáže, opravy, výměny termostatických regulačních ventilů, kohoutů, pojistných a redukčních ventilů, topení.....
+                        dopouštění, odvzdušnění, kontrola topných systémů</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Zámečnické práce</h3>
+                    <p>Výroba kovových konstrukcí, mříží apod.....
+                        svařování, broušení, řezání.....
+                        výměna, oprava vložek, zámků, kování, pantů dveří, oken.....</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="column-right">
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Instalatérské práce</h3>
+                    <p>montáže, opravy, úpravy vodovodního a kanalizačního potrubí, čištění, přetěsnění odpadních a kanalizačních svodů<br>
+                        výměna, montáž, opravy zařizovacích předmětů – umyvadla, vodovodní baterie, WC zařízení, bojlerů...</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Malířské práce</h3>
+                    <p>malování interieru, malby omyvatelné, opravy povrchů, omítek, penetrační a protiplísňové nátěry, nátěry fasád, nátěry okapů, rámů oken, dveří......</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Stavební práce</h3>
+                    <p>stavební konstrukce, zednické práce, obkladačské, pokládka dlažby, sklenářské práce, sádrokartonářské práce, betonování, bourací práce včetně likvidace stavebního materiálu......</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Úklidy vnitřních prostor</h3>
+                    <p>generální úklid po rekonstrukcích
+                        hloubkové čištění podlah čistícím strojem, voskování
+                        vyklízecí práce</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
+                <div class="box-content">
+                    <h3>Zimní úklidové práce parkovišť a okolí</h3>
+                    <p>zajištění zimní údržby parkovišť a příjezdových komunikací
+                        shoz sněhu, ledu a rampouchů ze střech a okapů</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
