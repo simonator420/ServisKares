@@ -124,6 +124,36 @@
             color: #333333;
         }
 
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the top */
+            /*padding: 1em 4em; !* Adjust padding as needed *!*/
+            background-color: #ff3636; /* Optional background color */
+            margin-top: 2em;
+            border-radius: 0.5em;
+        }
+
+        .about-text h1{
+            font-size: 2.5em;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 2em;
+            padding-left: 2em;
+        }
+
+        .about-image {
+            flex: 1;
+            padding: 1em 4em;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .offer-columns {
             display: flex;
             justify-content: space-between;
@@ -148,6 +178,7 @@
             background-color: #f6f6f6;
             height: 9em;
             transition: transform 0.3s ease;
+            background-image: none;
         }
 
         .box:hover{
@@ -265,6 +296,52 @@
             .cross .bar:nth-child(3) {
                 transform: rotate(-45deg) translateY(-0.585em);
             }
+
+            .offer-columns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .column-left, .column-right {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .box p{
+                color: #6b6b6b;
+            }
+
+            .box:hover{
+                transform: none;
+            }
+
+            .box::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(250, 250, 250, 0.9); /* semi-transparent black */
+                z-index: 1;
+            }
+
+            .box-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .box img{
+                display: none;
+            }
+
         }
 
     </style>
@@ -276,6 +353,23 @@
             hamburger.classList.toggle('cross');
         }
 
+        function applyBackgroundImageForMobile() {
+            if (window.innerWidth <= 768) {
+                const boxes = document.querySelectorAll('.box');
+                boxes.forEach(box => {
+                    const img = box.querySelector('img');
+                    if (img) {
+                        box.style.backgroundImage = `url('${img.src}')`;
+                        img.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('resize', applyBackgroundImageForMobile);
+        window.addEventListener('DOMContentLoaded', applyBackgroundImageForMobile);
+
+
     </script>
 </head>
 <body>
@@ -284,8 +378,8 @@
         <div class="logo">LOGO</div>
         <div class="navigation-links">
             <a href="#" onclick="toggleMenu()">Domů</a>
-            <a href="#" onclick="toggleMenu()">Nabízené služby</a>
-            <a href="#" onclick="toggleMenu()">O společnosti</a>
+            <a href="#nabizene-sluzby" onclick="toggleMenu()">Nabízené služby</a>
+            <a href="#o-spolecnosti" onclick="toggleMenu()">O společnosti</a>
             <a href="#" onclick="toggleMenu()">Reference</a>
             <a href="#" onclick="toggleMenu()">Kontakt</a>
         </div>
@@ -304,8 +398,27 @@
     </div>
 </div>
 <div class="content">
+
+    <div class="about-section" id = "o-spolecnosti">
+        <div class="about-text">
+            <h1>O firmě</h1>
+            <p>Firma <b>TOMÁŠ KAREŠ SERVIS s.r.o.</b>
+
+                vznikla v roce 2009 pokračováním a transformací firmy "Tomáš Kareš", která se od svého vzniku v roce 1997 specializovala na servisní a údržbařské práce pro obchodní řetězce společnosti DELVITA a PLUS Discount a v současné době mezi její významné zákazníky patří společnosti jako je PENNY Market, KIK Textil, BILLA, TESCO.
+                <br>
+                Firma disponuje stabilizovaným týmem zkušených a řemeslně zručných odborníků a dlouhodobě spolupracuje s živnostníky a kvalifikovanými pracovníky mnoha profesí. 12 mobilních týmů s rychlým výjezdem řeší havarijní opravy již do 2 hodin od nahlášení ve spolupráci s centrálou společnosti.
+                <br>
+                Naše práce spočívá v zajištění běžného servisu a údržby provozoven včetně úklidových prací, havarijních i plánovaných oprav, rekonstrukčních prací např. při modernizaci a zvalitňování služeb.
+                <br>
+                Snažíme se vytvářet pro pracovníky našeho klienta takové podmínky, aby podávali co nejlepší výkony a v konečném důsledku pozitivně přispěli k jeho ekonomickému růstu a celkovému úspěchu. </p>
+        </div>
+        <div class="about-image">
+            <img src="https://www.bsquare.com/wp-content/uploads/2022/12/facility_management_webinar_Bsquare-scaled-1.webp" alt="About the company">
+        </div>
+    </div>
+
     <h1>Prohlédněte si naše služby</h1>
-    <div class="offer-columns">
+    <div class="offer-columns" id="nabizene-sluzby">
         <div class="column-left">
             <div class="box">
                 <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="Description of Image">
