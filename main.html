@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomáš Kareš Servis s.r.o.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;500&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: Arial, sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         .hero-section {
@@ -25,7 +27,7 @@
         .hero-text {
             text-align: left;
             padding-left: 6em;
-            padding-top: 14.5em;
+            padding-top: 32vh;
             color: white;
             z-index: 10;
         }
@@ -33,10 +35,12 @@
         .hero-text h1 {
             font-size: 2em;
             margin-bottom: 0px;
+            font-weight: 300;
         }
 
         .hero-text h2 {
-            font-size: 3em;
+            font-size: 5em;
+            font-weight: bold;
             margin-top: 0.2em;
             margin-bottom: 0px;
         }
@@ -44,22 +48,24 @@
         .hero-text p{
             margin-top: 1em;
             font-size: 1em;
+            font-weight: 300;
         }
 
         .hero-button {
-            background-color: white;
-            color: black;
+            background-color: #ff3636;
+            color: white;
             padding: 0.8em 2em;
             border: none;
             border-radius: 0.3em;
             font-size: 1em;
             margin-top: 0.5em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.4s ease;
         }
 
         .hero-button:hover {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: white;
+            color: #ff3636;
         }
 
         .navigation {
@@ -85,6 +91,7 @@
             display: flex;
             flex-direction: row;
             margin-left: auto;
+            font-weight: 300;
         }
 
         .navigation-links.open {
@@ -96,17 +103,25 @@
             text-decoration: none;
             margin: 0 0.6em;
             padding: 0.3em 0.6em;
-            border: 1px solid white;
+            border: 1px solid transparent;
             border-radius: 0.3em;
+            transition: background-color 0.4s ease;
         }
 
         .navigation a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgb(255, 54, 54);
         }
 
         .content {
-            padding-right: 6em;
-            padding-left: 6em;
+            padding-right: 8em;
+            padding-left: 8em;
+        }
+
+        .content h1{
+            margin-bottom: 0.5em;
+            padding-top: 0.5em;
+            font-size: 2.5em;
+            color: #333333;
         }
 
         .offer-columns {
@@ -131,6 +146,12 @@
             margin-bottom: 1em;
             position: relative;
             background-color: #f6f6f6;
+            height: 9em;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover{
+            transform: scale(1.01);
         }
 
         .box img {
@@ -146,11 +167,16 @@
 
         .box h3 {
             margin-top: 0;
-            margin-bottom: 0.5em;
+            margin-bottom: -0.5em;
+            font-size: 1.5em;
+            color: #333333;
+            font-weight: 500;
         }
 
         .box p {
-            margin-bottom: 1em;
+            margin-bottom: -2em;
+            color: darkgray;
+            font-weight: 300;
         }
 
         .box button {
@@ -249,6 +275,7 @@
             navLinks.classList.toggle('open');
             hamburger.classList.toggle('cross');
         }
+
     </script>
 </head>
 <body>
@@ -277,9 +304,7 @@
     </div>
 </div>
 <div class="content">
-    <h1>Welcome to our website</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-
+    <h1>Prohlédněte si naše služby</h1>
     <div class="offer-columns">
         <div class="column-left">
             <div class="box">
@@ -290,7 +315,6 @@
                         elektromontáže v průmyslových objektech, opravy osvětlení reklam, parkovišť.<br>
                         zajištění elektrorevize<br>
                         servisní práce – opravy, výměny, montáže zářivek, svítidel, zásuvek, vypínačů, jističů, spínačů, rozvaděčů....</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -299,7 +323,6 @@
                 <div class="box-content">
                     <h3>Letní úklidy parkovišť a okolí</h3>
                     <p>pravidelný úklid parkovišť včetně sečení přilehlých travnatých ploch, mulčování, pletí, postřiky, čištění žlabů kanalizace, čištění okapů vč. likvidace odpadu z prováděných činností, hloubkové čištění zámkové dlažbyv</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -308,7 +331,6 @@
                 <div class="box-content">
                     <h3>Ostraha</h3>
                     <p>Fyzická ostraha objektu, majetku</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -318,7 +340,6 @@
                     <h3>Topenářské práce</h3>
                     <p>montáže, opravy, výměny termostatických regulačních ventilů, kohoutů, pojistných a redukčních ventilů, topení.....
                         dopouštění, odvzdušnění, kontrola topných systémů</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -329,7 +350,6 @@
                     <p>Výroba kovových konstrukcí, mříží apod.....
                         svařování, broušení, řezání.....
                         výměna, oprava vložek, zámků, kování, pantů dveří, oken.....</p>
-                    <button>Read More</button>
                 </div>
             </div>
         </div>
@@ -341,7 +361,6 @@
                     <h3>Instalatérské práce</h3>
                     <p>montáže, opravy, úpravy vodovodního a kanalizačního potrubí, čištění, přetěsnění odpadních a kanalizačních svodů<br>
                         výměna, montáž, opravy zařizovacích předmětů – umyvadla, vodovodní baterie, WC zařízení, bojlerů...</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -350,7 +369,6 @@
                 <div class="box-content">
                     <h3>Malířské práce</h3>
                     <p>malování interieru, malby omyvatelné, opravy povrchů, omítek, penetrační a protiplísňové nátěry, nátěry fasád, nátěry okapů, rámů oken, dveří......</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -359,7 +377,6 @@
                 <div class="box-content">
                     <h3>Stavební práce</h3>
                     <p>stavební konstrukce, zednické práce, obkladačské, pokládka dlažby, sklenářské práce, sádrokartonářské práce, betonování, bourací práce včetně likvidace stavebního materiálu......</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -370,7 +387,6 @@
                     <p>generální úklid po rekonstrukcích
                         hloubkové čištění podlah čistícím strojem, voskování
                         vyklízecí práce</p>
-                    <button>Read More</button>
                 </div>
             </div>
 
@@ -380,7 +396,6 @@
                     <h3>Zimní úklidové práce parkovišť a okolí</h3>
                     <p>zajištění zimní údržby parkovišť a příjezdových komunikací
                         shoz sněhu, ledu a rampouchů ze střech a okapů</p>
-                    <button>Read More</button>
                 </div>
             </div>
         </div>
